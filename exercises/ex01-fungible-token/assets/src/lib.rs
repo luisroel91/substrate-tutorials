@@ -12,8 +12,6 @@ mod tests;
 
 #[frame_support::pallet]
 pub mod pallet {
-	use frame_benchmarking::account;
-	use frame_benchmarking::BenchmarkParameter::{d, m, o};
 	use super::*;
 	use frame_support::pallet_prelude::*;
 	use frame_system::pallet_prelude::*;
@@ -22,7 +20,7 @@ pub mod pallet {
 	#[pallet::config]
 	pub trait Config: frame_system::Config {
 		/// Because this pallet emits events, it depends on the runtime's definition of an event.
-		type Event: From<Event<Self>> + IsType<<Self as frame_system::Config>::Event>;
+		type RuntimeEvent: From<Event<Self>> + IsType<<Self as frame_system::Config>::RuntimeEvent>;
 
 		#[pallet::constant]
 		type MaxLength: Get<u32>;
