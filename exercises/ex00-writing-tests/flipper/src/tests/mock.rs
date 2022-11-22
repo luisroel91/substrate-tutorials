@@ -64,3 +64,4 @@ pub fn new_test_ext() -> sp_io::TestExternalities {
 }
 
 pub const ALICE: u64 = 0;
+pub const LUIS: u64 = 1;
